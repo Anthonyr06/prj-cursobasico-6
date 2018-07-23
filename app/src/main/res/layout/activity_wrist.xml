@@ -4,23 +4,25 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Height">
+    tools:context=".wrist">
+
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="30sp"
         android:textStyle="bold"
+        android:gravity="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.174"
-        android:text="@string/hintAndTxtViewHeight"
+        android:text="@string/hintAndTxtViewWrist"
         android:textColor="@android:color/black" />
 
     <Button
-        android:id="@+id/btnHeight"
+        android:id="@+id/btnWrist"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -31,12 +33,12 @@
         android:text="@string/btnSiguiente" />
 
     <EditText
-        android:id="@+id/editTxtHeight"
+        android:id="@+id/editTxtWrist"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="numberDecimal"
-        android:hint="@string/hintAndTxtViewHeight"
+        android:hint="@string/hintAndTxtViewWrist"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.36"
@@ -45,7 +47,7 @@
         app:layout_constraintVertical_bias="0.497" />
 
     <Spinner
-        android:id="@+id/spnHeight"
+        android:id="@+id/spnWrist"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
@@ -53,8 +55,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/editTxtHeight"
+        app:layout_constraintStart_toEndOf="@+id/editTxtWrist"
         app:layout_constraintTop_toTopOf="parent" />
-
-
 </android.support.constraint.ConstraintLayout>

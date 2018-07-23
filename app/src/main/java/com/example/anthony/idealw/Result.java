@@ -17,30 +17,90 @@ public class Result extends AppCompatActivity implements View.OnClickListener {
 
         findViewById(R.id.btnResult).setOnClickListener(this);
 
-        TextView txtSex = findViewById(R.id.txtViewResult1);
-        TextView txtHeight = findViewById(R.id.txtViewResult2);
-        TextView txtWeight = findViewById(R.id.txtViewResult3);
-        TextView txtImc = findViewById(R.id.txtViewResult4);
-        TextView principalResultWeight = findViewById(R.id.txtViewResult5);
+        TextView txtPesoIdeal = findViewById(R.id.txtViewResult1);
+        TextView txtSex = findViewById(R.id.txtViewResult2);
+        TextView txtHeight = findViewById(R.id.txtViewResult3);
+        TextView txtWeight = findViewById(R.id.txtViewResult4);
+        TextView txtImc = findViewById(R.id.txtViewResult5);
+        TextView txtC = findViewById(R.id.txtViewResult6);
+        TextView principalResultWeight = findViewById(R.id.txtViewResult7);
 
         char sex = getIntent().getCharExtra("sex", 'm');
-        double height = getIntent().getDoubleExtra("Height",0);
-        String heightMeasure = getIntent().getStringExtra("HeightMeasure");
-        double weight = getIntent().getDoubleExtra("Weight",0);
-        String weightMeasure = getIntent().getStringExtra("WeightMeasure");
-
-        if(heightMeasure.equals("cm")){
-            height = height / 100;
-        }
+        double height = getIntent().getDoubleExtra("height",0);
+        String heightMeasure = getIntent().getStringExtra("heightMeasure");
+        double weight = getIntent().getDoubleExtra("weight",0);
+        String weightMeasure = getIntent().getStringExtra("weightMeasure");
+        double wrist = getIntent().getDoubleExtra("wrist",0);
+        String wristMeasure = getIntent().getStringExtra("wristMeasure");
 
         if(weightMeasure.equals("lb")){
-            weight = weight / 2.2046;
+            weight = weight / 2.2046; //pasando a kg
         }
 
-        double imc = weight/(height*height);
+        if(wristMeasure.equals("in")){
+            wrist = wrist / 0.39370; //pasando a cm
+        }
 
-        DecimalFormat df = new DecimalFormat("#.00");
-        String prw;
+        double imc, mco;
+
+        if(heightMeasure.equals("m")){
+
+            imc = weight/(height*height); //Indice de Masa Corporal //metros //kg
+            mco = (height*height)*25; //Masa Corporal Optima //metros //kg
+
+            height = height * 100; //pasando a cm
+
+        }else {
+            height = height / 100; //pasando a m
+
+            imc = weight/(height*height); //Indice de Masa Corporal //metros //kg
+            mco = (height*height)*25; //Masa Corporal Optima //metros //kg
+
+            height = height * 100; //pasando a cm
+        }
+
+        double ic = height / wrist; //Indice de complexion
+        String complexion ="";
+        double pesoIdeal = mco;
+
+        if((ic > 10.5 & sex == 'm') | (ic > 11.5 & sex == 'f')){
+            if (sex == 'm'){
+                pesoIdeal = mco - 4; //4kg
+            }else {
+                pesoIdeal = mco - 3; //3kg
+            }
+            complexion = "Pequeña";
+
+        }else if((ic > 9.5 & ic < 10.5 & sex == 'm') | (ic > 10 & ic < 11 & sex == 'f')){
+
+            complexion = "Mediana";
+
+        }else if ((ic < 9.5 & sex == 'm') | (ic < 10 & sex == 'f')){
+
+            if (sex == 'm'){
+                pesoIdeal = mco + 4; //4kg
+            }else {
+                pesoIdeal = mco + 3; //3kg
+            }
+            complexion = "Grande";
+        }
+
+        DecimalFormat df = new DecimalFormat("#.0");
+        String prw = ""; //principal result weight
+
+        if(imc<19){
+            prw = "Peso bajo";
+        }else if(imc>19 & imc<25){
+            prw = "Peso ideal";
+        }else if(imc>25.1 & imc<30){
+            prw = "Sobrepeso";
+        }else if(imc>30.1 & imc<35){
+            prw = "Obesidad";
+        }else if(imc>35.1 & imc<40){
+            prw = "Obesidad severa";
+        }else if(imc>40){
+            prw = "Obesidad morbida";
+        }
 
         if (sex == 'f'){
             txtSex.setText(getString(R.string.resultSex , "Femenino"));
@@ -48,33 +108,24 @@ public class Result extends AppCompatActivity implements View.OnClickListener {
             txtSex.setText(getString(R.string.resultSex , "Masculino"));
         }
 
-        if(imc<18.5){
-            prw = "Peso insuficiente";
-        }else if(imc>18.5 & imc<24.9){
-            prw = "Peso normal(ideal)";
-        }else if(imc>25 & imc<26.9){
-            prw = "Puede haber sobrepeso grado I";
-        }else if(imc>27 & imc<29.9){
-            prw = "Sobrepeso tipo I (preobesidad)";
-        }else if(imc>30 & imc<34.9){
-            prw = "Obesidad tipo I (leve)";
-        }else if(imc>35 & imc<39.9){
-            prw = "Obesidad tipo II (moderada)";
-        }else if(imc>40 & imc<49.9){
-            prw = "Obesidad tipo III (mórbida)";
-        }else{
-            prw = "Obesidad extrema";
-        }
-
+        txtPesoIdeal.setText(getString(R.string.resultPesoIdeal, df.format(pesoIdeal), weightMeasure));
         txtHeight.setText(getString(R.string.resultHeight, df.format(height), heightMeasure));
         txtWeight.setText(getString(R.string.resultWeight, df.format(weight), weightMeasure));
         txtImc.setText(getString(R.string.resultImc, df.format(imc)));
+        txtC.setText(getString(R.string.resultC,complexion));
+
         principalResultWeight.setText(getString(R.string.principalResultWeight, prw));
     }
 
     @Override
+    public void onBackPressed() {
+        Intent intentW = new Intent(this, wrist.class);
+        startActivity(intentW);
+        finish();
+    }
+
+    @Override
     public void onClick(View view) {
-        Intent intentM = new Intent(this, MainActivity.class);
-        startActivity(intentM);
+        finish();
     }
 }

@@ -10,7 +10,7 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-public class Height extends AppCompatActivity implements View.OnClickListener{
+public class wrist extends AppCompatActivity implements View.OnClickListener {
 
     EditText edit;
     Spinner spn;
@@ -19,13 +19,13 @@ public class Height extends AppCompatActivity implements View.OnClickListener{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_height);
+        setContentView(R.layout.activity_wrist);
 
-        findViewById(R.id.btnHeight).setOnClickListener(this);
-        spn = findViewById(R.id.spnHeight);
-        edit = findViewById(R.id.editTxtHeight);
+        findViewById(R.id.btnWrist).setOnClickListener(this);
+        spn = findViewById(R.id.spnWrist);
+        edit = findViewById(R.id.editTxtWrist);
 
-        String[] measure = {"cm","m"};
+        String[] measure = {"cm","in"};
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this, R.layout.spinners_layout, measure);
         spn.setAdapter(adapter);
         spn.setSelection(0);
@@ -45,30 +45,37 @@ public class Height extends AppCompatActivity implements View.OnClickListener{
 
     @Override
     public void onBackPressed() {
-        Intent intentS = new Intent(this, Sex.class);
-        startActivity(intentS);
+        Intent intentW = new Intent(this, Weight.class);
+        startActivity(intentW);
         finish();
     }
 
     @Override
     public void onClick(View view) {
-
         if(edit.getText().toString().isEmpty() || edit.getText().toString().equals(".")){
 
-            Toast.makeText(this, "Introduzca su altura", Toast.LENGTH_SHORT)
+            Toast.makeText(this, "Introduzca su medida", Toast.LENGTH_SHORT)
                     .show();
 
         }else {
 
-            double height = Double.parseDouble(edit.getText().toString());
+            double wrist = Double.parseDouble(edit.getText().toString());
 
             char sex = getIntent().getCharExtra("sex", 'm');
+            double height = getIntent().getDoubleExtra("height",0);
+            String heightMeasure = getIntent().getStringExtra("heightMeasure");
+            double weight = getIntent().getDoubleExtra("weight",0);
+            String weightMeasure = getIntent().getStringExtra("weightMeasure");
 
-            Intent intentW = new Intent(this, Weight.class);
-            intentW.putExtra("sex",sex);
-            intentW.putExtra("height", height);
-            intentW.putExtra("heightMeasure", spnSelected);
-            startActivity(intentW);
+            Intent intentR = new Intent(this, Result.class);
+            intentR.putExtra("sex",sex);
+            intentR.putExtra("height", height);
+            intentR.putExtra("heightMeasure", heightMeasure);
+            intentR.putExtra("weight", weight);
+            intentR.putExtra("weightMeasure", weightMeasure);
+            intentR.putExtra("wrist",wrist);
+            intentR.putExtra("wristMeasure", spnSelected);
+            startActivity(intentR);
             finish();
         }
     }

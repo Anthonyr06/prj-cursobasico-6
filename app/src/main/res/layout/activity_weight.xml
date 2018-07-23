@@ -16,7 +16,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.174"
-        android:text="@string/hintAndTxtViewHeight"
+        android:text="@string/hintAndTxtViewWeight"
         android:textColor="@android:color/black" />
 
     <Button
@@ -28,7 +28,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.717"
-        android:text="@string/btnHeightAndWeight" />
+        android:text="@string/btnSiguiente" />
 
     <EditText
         android:id="@+id/editTxtWeight"
@@ -36,7 +36,7 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="numberDecimal"
-        android:hint="@string/hintAndTxtViewHeight"
+        android:hint="@string/hintAndTxtViewWeight"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.36"

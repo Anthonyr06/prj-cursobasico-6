@@ -18,6 +18,9 @@ public class Weight extends AppCompatActivity implements View.OnClickListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_weight);
         findViewById(R.id.btnWeight).setOnClickListener(this);
@@ -42,6 +45,13 @@ public class Weight extends AppCompatActivity implements View.OnClickListener {
         });
     }
 
+    @Override
+    public void onBackPressed() {
+        Intent intentH = new Intent(this, Height.class);
+        startActivity(intentH);
+        finish();
+    }
+
 
     @Override
     public void onClick(View view) {
@@ -55,12 +65,20 @@ public class Weight extends AppCompatActivity implements View.OnClickListener {
 
             double weight = Double.parseDouble(edit.getText().toString());
 
-            Intent intentR = new Intent(this, Result.class);
-            intentR.putExtra("weight", weight);
-            intentR.putExtra("weightMeasure", spnSelected);
+            char sex = getIntent().getCharExtra("sex", 'm');
+            double height = getIntent().getDoubleExtra("height",0);
+            String heightMeasure = getIntent().getStringExtra("heightMeasure");
 
-            Intent intentW = new Intent(this, Weight.class);
+
+            Intent intentW = new Intent(this, wrist.class);
+            intentW.putExtra("sex",sex);
+            intentW.putExtra("height", height);
+            intentW.putExtra("heightMeasure", heightMeasure);
+            intentW.putExtra("weight", weight);
+            intentW.putExtra("weightMeasure", spnSelected);
+
             startActivity(intentW);
+            finish();
         }
     }
 }

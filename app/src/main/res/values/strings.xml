@@ -12,15 +12,19 @@
 
     <string name="hintAndTxtViewWeight">Introduzca su peso</string>
 
-    <string name="btnHeightAndWeight">Siguiente</string>
+    <string name="btnSiguiente">Siguiente</string>
 
     <string name="btnResult">Volver a intentarlo</string>
     <string name="TxtResult1">Resultados</string>
 
+    <string name="hintAndTxtViewWrist">Introduzca la circunferencia de su muñeca</string>
+
+    <string name="resultPesoIdeal">Su peso ideal es: %1$s %2$s</string>
     <string name="resultSex">Su genero es: %1$s</string>
-    <string name="resultHeight">Su altura es: %1$s%2$s</string>
-    <string name="resultWeight">Su peso es: %1$s%2$s</string>
-    <string name="resultImc">Su peso es: %1$s</string>
+    <string name="resultHeight">Su altura es: %1$s %2$s</string>
+    <string name="resultWeight">Su peso es: %1$s %2$s</string>
+    <string name="resultImc">Su Indice de Masa Corporal es: %1$s</string>
+    <string name="resultC">Su Complexion es: %1$s</string>
     <string name="principalResultWeight">%1$s</string>
 
 </resources>

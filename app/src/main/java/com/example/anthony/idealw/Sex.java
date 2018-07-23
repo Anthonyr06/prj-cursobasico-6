@@ -28,11 +28,9 @@ public class Sex extends AppCompatActivity implements View.OnClickListener{
                 sex = 'F';
                 break;
         }
-
-        Intent intentR = new Intent(this, Result.class);
-        intentR.putExtra("sex", sex);
-
         Intent intentH = new Intent(this, Height.class);
         startActivity(intentH);
+        intentH.putExtra("sex", sex);
+        finish();
     }
 }

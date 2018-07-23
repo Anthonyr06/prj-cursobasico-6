@@ -14,9 +14,12 @@
 
     <string name="btnHeightAndWeight">Siguiente</string>
 
-    <string name="cm">cm</string>
-    <string name="m">m</string>
-    <string name="ft">ft</string>
-    <string name="btnResult">Reiniciar</string>
+    <string name="btnResult">Volver a intentarlo</string>
+    <string name="TxtResult1">Resultados</string>
+
+    <string name="resultSex">Su genero es: %1$s</string>
+    <string name="resultHeight">Su altura es: %1$d%2$s</string>
+    <string name="resultWeight">Su peso es: %1$d%2$s</string>
+    <string name="resultImc">Su peso es: %1$d</string>
 
 </resources>

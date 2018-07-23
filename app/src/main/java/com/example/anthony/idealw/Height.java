@@ -25,7 +25,7 @@ public class Height extends AppCompatActivity implements View.OnClickListener{
         spn = findViewById(R.id.spnHeight);
         edit = findViewById(R.id.editTxtHeight);
 
-        String[] measure = {"cm","m","ft"};
+        String[] measure = {"m","cm"};
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this, R.layout.spinners_layout, measure);
         spn.setAdapter(adapter);
         spn.setSelection(0);
@@ -54,11 +54,11 @@ public class Height extends AppCompatActivity implements View.OnClickListener{
 
         }else {
 
-            float height = Float.parseFloat(edit.getText().toString());
+            double height = Double.parseDouble(edit.getText().toString());
 
             Intent intentR = new Intent(this, Result.class);
-            intentR.putExtra("Height", height);
-            intentR.putExtra("HeightMeasure", spnSelected);
+            intentR.putExtra("height", height);
+            intentR.putExtra("heightMeasure", spnSelected);
 
             Intent intentW = new Intent(this, Weight.class);
             startActivity(intentW);

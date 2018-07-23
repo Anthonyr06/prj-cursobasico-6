@@ -53,11 +53,11 @@ public class Weight extends AppCompatActivity implements View.OnClickListener {
 
         }else {
 
-            float weight = Float.parseFloat(edit.getText().toString());
+            double weight = Double.parseDouble(edit.getText().toString());
 
             Intent intentR = new Intent(this, Result.class);
-            intentR.putExtra("Weight", weight);
-            intentR.putExtra("WeightMeasure", spnSelected);
+            intentR.putExtra("weight", weight);
+            intentR.putExtra("weightMeasure", spnSelected);
 
             Intent intentW = new Intent(this, Weight.class);
             startActivity(intentW);

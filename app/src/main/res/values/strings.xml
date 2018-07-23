@@ -2,7 +2,7 @@
     <string name="app_name">Tu peso ideal</string>
 
     <string name="txtViewMain">Calcular tu peso ideal</string>
-    <string name="btnMain">Pulsa Aqui</string>
+    <string name="btnMain">Comenzar</string>
 
     <string name="txtViewSex">Seleccione su genero</string>
     <string name="btnMaleSex">Hombre</string>
@@ -13,5 +13,10 @@
     <string name="hintAndTxtViewWeight">Introduzca su peso</string>
 
     <string name="btnHeightAndWeight">Siguiente</string>
+
+    <string name="cm">cm</string>
+    <string name="m">m</string>
+    <string name="ft">ft</string>
+    <string name="btnResult">Reiniciar</string>
 
 </resources>

@@ -46,8 +46,8 @@
 
     <Spinner
         android:id="@+id/spnHeight"
-        android:layout_width="81dp"
-        android:layout_height="35dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
         android:layout_marginStart="8dp"
         app:layout_constraintBottom_toBottomOf="parent"

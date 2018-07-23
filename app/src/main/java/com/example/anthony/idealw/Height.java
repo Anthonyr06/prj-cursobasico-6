@@ -1,7 +1,6 @@
 package com.example.anthony.idealw;
 
 import android.content.Intent;
-import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -15,6 +14,7 @@ public class Height extends AppCompatActivity implements View.OnClickListener{
 
     EditText edit;
     Spinner spn;
+    String spnSelected;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,18 +25,16 @@ public class Height extends AppCompatActivity implements View.OnClickListener{
         spn = findViewById(R.id.spnHeight);
         edit = findViewById(R.id.editTxtHeight);
 
-
         String[] measure = {"cm","m","ft"};
-
-        spn.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, measure));
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, R.layout.spinners_layout, measure);
+        spn.setAdapter(adapter);
+        spn.setSelection(0);
 
         spn.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int pos, long id)
             {
-                Toast.makeText(adapterView.getContext(),
-                        (String) adapterView.getItemAtPosition(pos), Toast.LENGTH_SHORT).show();
+                spnSelected = (String) adapterView.getItemAtPosition(pos);
             }
 
             @Override
@@ -49,9 +47,9 @@ public class Height extends AppCompatActivity implements View.OnClickListener{
     @Override
     public void onClick(View view) {
 
-        if(edit.getText().toString().isEmpty()){
+        if(edit.getText().toString().isEmpty() || edit.getText().toString().equals(".")){
 
-            Toast.makeText(this, "Ingrese su altura", Toast.LENGTH_SHORT)
+            Toast.makeText(this, "Introduzca su altura", Toast.LENGTH_SHORT)
                     .show();
 
         }else {
@@ -60,7 +58,10 @@ public class Height extends AppCompatActivity implements View.OnClickListener{
 
             Intent intentR = new Intent(this, Result.class);
             intentR.putExtra("Height", height);
+            intentR.putExtra("HeightMeasure", spnSelected);
 
+            Intent intentW = new Intent(this, Weight.class);
+            startActivity(intentW);
         }
     }
 }

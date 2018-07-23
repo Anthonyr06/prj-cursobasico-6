@@ -18,8 +18,9 @@
     <string name="TxtResult1">Resultados</string>
 
     <string name="resultSex">Su genero es: %1$s</string>
-    <string name="resultHeight">Su altura es: %1$d%2$s</string>
-    <string name="resultWeight">Su peso es: %1$d%2$s</string>
-    <string name="resultImc">Su peso es: %1$d</string>
+    <string name="resultHeight">Su altura es: %1$s%2$s</string>
+    <string name="resultWeight">Su peso es: %1$s%2$s</string>
+    <string name="resultImc">Su peso es: %1$s</string>
+    <string name="principalResultWeight">%1$s</string>
 
 </resources>

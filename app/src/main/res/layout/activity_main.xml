@@ -16,14 +16,14 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.174"
-        tools:text="Calcular tu peso ideal"
-        tools:textColor="@android:color/black" />
+        android:text="@string/txtViewMain"
+        android:textColor="@android:color/black" />
 
     <Button
         android:id="@+id/btnMain"
         android:layout_width="133dp"
         android:layout_height="117dp"
-        tools:text="Pulsa Aqui"
+        android:text="@string/btnMain"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

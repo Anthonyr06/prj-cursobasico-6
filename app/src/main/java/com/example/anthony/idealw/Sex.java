@@ -1,10 +1,13 @@
 package com.example.anthony.idealw;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
 public class Sex extends AppCompatActivity implements View.OnClickListener{
+
+    char sex;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,9 +22,17 @@ public class Sex extends AppCompatActivity implements View.OnClickListener{
     public void onClick(View view) {
         switch (view.getId()){
             case R.id.btnMale:
+                sex = 'M';
                 break;
             case R.id.btnFemale:
+                sex = 'F';
                 break;
         }
+
+        Intent intentR = new Intent(this, Result.class);
+        intentR.putExtra("sex", sex);
+
+        Intent intentH = new Intent(this, Height.class);
+        startActivity(intentH);
     }
 }

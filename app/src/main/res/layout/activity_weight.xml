@@ -16,8 +16,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.174"
-        tools:text="Ingrese su peso"
-        tools:textColor="@android:color/black" />
+        android:text="@string/hintAndTxtViewHeight"
+        android:textColor="@android:color/black" />
 
     <Button
         android:id="@+id/btnWeight"
@@ -28,14 +28,15 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.717"
-        tools:text="Siguiente" />
+        android:text="@string/btnHeightAndWeight" />
 
     <EditText
         android:id="@+id/editTxtWeight"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
-        tools:contentDescription="Ingrese su altura"
+        android:inputType="numberDecimal"
+        android:hint="@string/hintAndTxtViewHeight"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.36"

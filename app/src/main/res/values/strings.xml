@@ -1,3 +1,17 @@
 <resources>
-    <string name="app_name">IdealW</string>
+    <string name="app_name">Tu peso ideal</string>
+
+    <string name="txtViewMain">Calcular tu peso ideal</string>
+    <string name="btnMain">Pulsa Aqui</string>
+
+    <string name="txtViewSex">Seleccione su genero</string>
+    <string name="btnMaleSex">Hombre</string>
+    <string name="btnFemaleSex">Mujer</string>
+
+    <string name="hintAndTxtViewHeight">Introduzca su altura</string>
+
+    <string name="hintAndTxtViewWeight">Introduzca su peso</string>
+
+    <string name="btnHeightAndWeight">Siguiente</string>
+
 </resources>

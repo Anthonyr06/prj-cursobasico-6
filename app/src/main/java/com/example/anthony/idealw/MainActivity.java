@@ -1,9 +1,15 @@
 package com.example.anthony.idealw;
 
+import android.app.ActivityOptions;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.transition.Slide;
+import android.view.Gravity;
 import android.view.View;
+import android.view.animation.AccelerateInterpolator;
+import android.view.animation.Animation;
+import android.view.animation.TranslateAnimation;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -20,5 +26,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View view) {
         Intent intent = new Intent(this, Sex.class);
         startActivity(intent);
+
+        overridePendingTransition(R.anim.activity_in, R.anim.activity_out);
     }
 }

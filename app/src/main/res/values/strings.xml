@@ -2,7 +2,7 @@
     <string name="app_name">Tu peso ideal</string>
 
     <string name="txtViewMain">Calcular tu peso ideal</string>
-    <string name="btnMain">Comenzar</string>
+    <string name="btnMain">Iniciar</string>
 
     <string name="txtViewSex">Seleccione su genero</string>
     <string name="btnMaleSex">Hombre</string>
@@ -27,7 +27,7 @@
     <string name="resultC">Su Complexion es: %1$s</string>
     <string name="resultWeightNeed1">Necesita perder: %1$s %2$s</string>
     <string name="resultWeightNeed2">Necesita ganar: %1$s %2$s</string>
-    <string name="infoResult">*Estos resultados son solo aproximados*</string>
+    <string name="infoResult">*Estos resultados no son un sustituto de una consulta medica*</string>
 
     <string name="principalResultWeight">%1$s</string>
 

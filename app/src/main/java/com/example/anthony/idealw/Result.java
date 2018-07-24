@@ -145,7 +145,15 @@ public class Result extends AppCompatActivity implements View.OnClickListener {
     }
 
     @Override
+    public void onBackPressed()
+    {
+        finish();
+        overridePendingTransition(R.anim.activity_back_in, R.anim.activity_back_out);
+    }
+
+    @Override
     public void onClick(View view) {
         finish();
+        overridePendingTransition(R.anim.activity_in, R.anim.activity_out);
     }
 }

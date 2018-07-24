@@ -9,7 +9,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="30sp"
+        android:textSize="32sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -21,11 +21,15 @@
 
     <Button
         android:id="@+id/btnMain"
-        android:layout_width="133dp"
-        android:layout_height="117dp"
+        android:layout_width="170dp"
+        android:layout_height="78dp"
         android:text="@string/btnMain"
+        android:textSize="25sp"
+        android:background="@drawable/borde_redondo_btn"
+        android:backgroundTint="@color/colorAccent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.549" />
 </android.support.constraint.ConstraintLayout>

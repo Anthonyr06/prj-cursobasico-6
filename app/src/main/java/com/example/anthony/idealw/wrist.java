@@ -50,6 +50,13 @@ public class wrist extends AppCompatActivity implements View.OnClickListener {
     }
 
     @Override
+    public void onBackPressed()
+    {
+        finish();
+        overridePendingTransition(R.anim.activity_back_in, R.anim.activity_back_out);
+    }
+
+    @Override
     public void onClick(View view) {
         if(edit.getText().toString().isEmpty() || edit.getText().toString().equals(".")){
 
@@ -76,6 +83,8 @@ public class wrist extends AppCompatActivity implements View.OnClickListener {
             intentR.putExtra("wristMeasure", spnSelected);
             startActivity(intentR);
             finish();
+
+            overridePendingTransition(R.anim.activity_in, R.anim.activity_out);
         }
     }
 }

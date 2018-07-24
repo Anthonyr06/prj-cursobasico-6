@@ -44,6 +44,13 @@ public class Height extends AppCompatActivity implements View.OnClickListener{
     }
 
     @Override
+    public void onBackPressed()
+    {
+        finish();
+        overridePendingTransition(R.anim.activity_back_in, R.anim.activity_back_out);
+    }
+
+    @Override
     public void onClick(View view) {
 
         if(edit.getText().toString().isEmpty() || edit.getText().toString().equals(".")){
@@ -63,6 +70,7 @@ public class Height extends AppCompatActivity implements View.OnClickListener{
             intentW.putExtra("heightMeasure", spnSelected);
             startActivity(intentW);
             finish();
+            overridePendingTransition(R.anim.activity_in, R.anim.activity_out);
         }
     }
 }

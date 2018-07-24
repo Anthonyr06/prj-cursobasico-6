@@ -16,9 +16,8 @@ public class wrist extends AppCompatActivity implements View.OnClickListener {
     Spinner spn;
     String spnSelected;
 
-    char sex;
-    double height, weight, wrist;
-    String heightMeasure, weightMeasure, wristMeasure;
+    double height;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

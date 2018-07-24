@@ -18,11 +18,9 @@ public class Weight extends AppCompatActivity implements View.OnClickListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
-
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_weight);
+
         findViewById(R.id.btnWeight).setOnClickListener(this);
         spn = findViewById(R.id.spnWeight);
         edit = findViewById(R.id.editTxtWeight);

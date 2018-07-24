@@ -10,7 +10,9 @@
         android:theme="@style/AppTheme"
         android:allowBackup="true"
         android:fullBackupContent="true">
-        <activity android:name=".MainActivity">
+        <activity android:name=".MainActivity"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -27,11 +29,21 @@
                     android:scheme="android-app-google-plus-demo" />
             </intent-filter>
         </activity>
-        <activity android:name=".Sex" />
-        <activity android:name=".Height" />
-        <activity android:name=".Weight" />
-        <activity android:name=".Result" />
-        <activity android:name=".wrist"/>
+        <activity android:name=".Sex"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Height"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Weight"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".Result"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".wrist"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"/>
     </application>
 
 </manifest>

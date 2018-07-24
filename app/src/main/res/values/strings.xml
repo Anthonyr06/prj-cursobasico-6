@@ -28,6 +28,7 @@
     <string name="resultWeightNeed1">Necesita perder: %1$s %2$s</string>
     <string name="resultWeightNeed2">Necesita ganar: %1$s %2$s</string>
     <string name="infoResult">*Estos resultados no son un sustituto de una consulta medica*</string>
+    <string name="resultImage">Tipo de peso</string>
 
     <string name="principalResultWeight">%1$s</string>
 

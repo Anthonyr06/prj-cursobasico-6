@@ -21,22 +21,25 @@
 
     <Button
         android:id="@+id/btnWeight"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="131dp"
+        android:layout_height="53dp"
+        android:background="@drawable/borde_redondo_btn"
+        android:text="@string/btnSiguiente"
+        android:backgroundTint="@color/colorAccent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.717"
-        android:text="@string/btnSiguiente" />
+        app:layout_constraintVertical_bias="0.803" />
 
     <EditText
         android:id="@+id/editTxtWeight"
-        android:layout_width="wrap_content"
+        android:layout_width="132dp"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:inputType="numberDecimal"
         android:hint="@string/hintAndTxtViewWeight"
+        android:inputType="numberDecimal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.36"
@@ -46,10 +49,11 @@
 
     <Spinner
         android:id="@+id/spnWeight"
-        android:layout_width="81dp"
-        android:layout_height="35dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
         android:layout_marginStart="8dp"
+        android:padding="1dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"

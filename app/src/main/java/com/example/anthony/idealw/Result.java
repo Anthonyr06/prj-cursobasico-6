@@ -4,6 +4,7 @@ import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.text.DecimalFormat;
@@ -13,6 +14,8 @@ public class Result extends AppCompatActivity implements View.OnClickListener {
     char sex;
     double height, weight, wrist;
     String heightMeasure, weightMeasure, wristMeasure;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,6 +31,7 @@ public class Result extends AppCompatActivity implements View.OnClickListener {
         TextView txtC = findViewById(R.id.txtViewResult7);
         TextView txtWeightNeed = findViewById(R.id.txtViewResult6);
         TextView principalResultWeight = findViewById(R.id.txtViewResult8);
+        ImageView imgView = findViewById(R.id.imgViewResult);
 
         sex = getIntent().getCharExtra("sex", 'M');
         height = getIntent().getDoubleExtra("height",0);
@@ -88,25 +92,32 @@ public class Result extends AppCompatActivity implements View.OnClickListener {
         DecimalFormat df = new DecimalFormat("#.0");
         String prw = ""; //principal result weight
         int color = R.color.colorPrimaryDark;
+        int img = R.drawable.peso_ideal;
 
         if(imc<19){
             prw = "Peso bajo";
             color = R.color.pesoBajo;
+            img = R.drawable.peso_bajo;
         }else if(imc>19 & imc<25){
             prw = "Peso ideal";
             color = R.color.pesoIdeal;
+            img = R.drawable.peso_ideal;
         }else if(imc>25.1 & imc<30){
             prw = "Sobrepeso";
             color = R.color.sobrepeso;
+            img = R.drawable.sobre_peso;
         }else if(imc>30.1 & imc<35){
             prw = "Obesidad";
             color = R.color.obesidad;
+            img = R.drawable.obesidad;
         }else if(imc>35.1 & imc<40){
             prw = "Obesidad severa";
             color = R.color.obesidadSevera;
+            img = R.drawable.obesidad_severa;
         }else if(imc>40){
             prw = "Obesidad morbida";
             color = R.color.obesidadMorbida;
+            img = R.drawable.obesidad_morbida;
         }
 
         if (sex == 'F'){
@@ -140,9 +151,11 @@ public class Result extends AppCompatActivity implements View.OnClickListener {
         txtC.setText(getString(R.string.resultC,complexion));
         txtWeightNeed.setText(getString(resultWeightNeed, df.format(weightNeed), weightMeasure));
 
+        imgView.setImageDrawable(getDrawable(img));
         principalResultWeight.setTextColor(ContextCompat.getColor(this,color));
         principalResultWeight.setText(getString(R.string.principalResultWeight, prw));
     }
+
 
     @Override
     public void onBackPressed()

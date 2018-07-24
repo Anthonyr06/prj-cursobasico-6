@@ -16,6 +16,10 @@ public class wrist extends AppCompatActivity implements View.OnClickListener {
     Spinner spn;
     String spnSelected;
 
+    char sex;
+    double height, weight, wrist;
+    String heightMeasure, weightMeasure, wristMeasure;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,6 +32,7 @@ public class wrist extends AppCompatActivity implements View.OnClickListener {
         String[] measure = {"cm","in"};
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this, R.layout.spinners_layout, measure);
         spn.setAdapter(adapter);
+
         spn.setSelection(0);
 
         spn.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -40,14 +45,8 @@ public class wrist extends AppCompatActivity implements View.OnClickListener {
             @Override
             public void onNothingSelected(AdapterView<?> parent)
             {    }
-        });
-    }
 
-    @Override
-    public void onBackPressed() {
-        Intent intentW = new Intent(this, Weight.class);
-        startActivity(intentW);
-        finish();
+        });
     }
 
     @Override

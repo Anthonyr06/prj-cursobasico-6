@@ -25,6 +25,10 @@
     <string name="resultWeight">Su peso es: %1$s %2$s</string>
     <string name="resultImc">Su Indice de Masa Corporal es: %1$s</string>
     <string name="resultC">Su Complexion es: %1$s</string>
+    <string name="resultWeightNeed1">Necesita perder: %1$s %2$s</string>
+    <string name="resultWeightNeed2">Necesita ganar: %1$s %2$s</string>
+    <string name="infoResult">*Estos resultados son solo aproximados*</string>
+
     <string name="principalResultWeight">%1$s</string>
 
 </resources>

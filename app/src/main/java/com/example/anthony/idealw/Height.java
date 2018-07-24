@@ -44,13 +44,6 @@ public class Height extends AppCompatActivity implements View.OnClickListener{
     }
 
     @Override
-    public void onBackPressed() {
-        Intent intentS = new Intent(this, Sex.class);
-        startActivity(intentS);
-        finish();
-    }
-
-    @Override
     public void onClick(View view) {
 
         if(edit.getText().toString().isEmpty() || edit.getText().toString().equals(".")){
@@ -62,7 +55,7 @@ public class Height extends AppCompatActivity implements View.OnClickListener{
 
             double height = Double.parseDouble(edit.getText().toString());
 
-            char sex = getIntent().getCharExtra("sex", 'm');
+            char sex = getIntent().getCharExtra("sex", 'M');
 
             Intent intentW = new Intent(this, Weight.class);
             intentW.putExtra("sex",sex);

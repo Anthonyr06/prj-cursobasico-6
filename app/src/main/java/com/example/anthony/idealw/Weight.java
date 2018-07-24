@@ -46,14 +46,6 @@ public class Weight extends AppCompatActivity implements View.OnClickListener {
     }
 
     @Override
-    public void onBackPressed() {
-        Intent intentH = new Intent(this, Height.class);
-        startActivity(intentH);
-        finish();
-    }
-
-
-    @Override
     public void onClick(View view) {
 
         if(edit.getText().toString().isEmpty() || edit.getText().toString().equals(".")){

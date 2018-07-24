@@ -3,4 +3,11 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+
+    <color name="pesoBajo">#FFEB3B</color>
+    <color name="pesoIdeal">#64DD17</color>
+    <color name="sobrepeso">#FFC107</color>
+    <color name="obesidad">#FF9800</color>
+    <color name="obesidadSevera">#F4511E</color>
+    <color name="obesidadMorbida">#BF360C</color>
 </resources>

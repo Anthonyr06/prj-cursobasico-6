@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.example.anthony.idealw">
 
     <application
@@ -9,7 +10,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:allowBackup="true"
-        android:fullBackupContent="true">
+        android:fullBackupContent="true"
+        tools:ignore="GoogleAppIndexingWarning">
         <activity android:name=".MainActivity"
             android:configChanges="orientation"
             android:screenOrientation="portrait">
@@ -18,15 +20,6 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
 
-                <action android:name="android.intent.action.VIEW" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-                <category android:name="android.intent.category.BROWSABLE" />
-
-                <!-- Accepts URIs that begin with "java-lang-programming://android-app-google-plus-demo" -->
-                <data
-                    android:host="java-lang-programming"
-                    android:scheme="android-app-google-plus-demo" />
             </intent-filter>
         </activity>
         <activity android:name=".Sex"
